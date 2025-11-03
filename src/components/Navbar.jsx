@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShoppingCart, User, Search, Home, Store, Info, Phone, LayoutDashboard } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
@@ -7,18 +8,18 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Brand */}
-          <a href="#" className="flex items-center gap-2 text-white font-semibold tracking-tight">
+          <Link to="/" className="flex items-center gap-2 text-white font-semibold tracking-tight">
             <div className="h-8 w-8 rounded-md bg-gradient-to-br from-blue-600 to-indigo-600" />
             <span className="text-lg">BlueCart</span>
-          </a>
+          </Link>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-6 text-sm text-white/80">
-            <a href="#" className="hover:text-white inline-flex items-center gap-2"><Home className="h-4 w-4" /> Home</a>
-            <a href="#shop" className="hover:text-white inline-flex items-center gap-2"><Store className="h-4 w-4" /> Shop</a>
-            <a href="#about" className="hover:text-white inline-flex items-center gap-2"><Info className="h-4 w-4" /> About</a>
-            <a href="#contact" className="hover:text-white inline-flex items-center gap-2"><Phone className="h-4 w-4" /> Contact</a>
-            <a href="#admin" className="hover:text-white inline-flex items-center gap-2"><LayoutDashboard className="h-4 w-4" /> Admin</a>
+            <Link to="/" className="hover:text-white inline-flex items-center gap-2"><Home className="h-4 w-4" /> Home</Link>
+            <Link to="/shop" className="hover:text-white inline-flex items-center gap-2"><Store className="h-4 w-4" /> Shop</Link>
+            <Link to="/about" className="hover:text-white inline-flex items-center gap-2"><Info className="h-4 w-4" /> About</Link>
+            <Link to="/contact" className="hover:text-white inline-flex items-center gap-2"><Phone className="h-4 w-4" /> Contact</Link>
+            <Link to="/admin" className="hover:text-white inline-flex items-center gap-2"><LayoutDashboard className="h-4 w-4" /> Admin</Link>
           </nav>
 
           {/* Actions */}
@@ -33,12 +34,12 @@ export default function Navbar() {
                 <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-4 w-4 text-white/60" />
               </div>
             </div>
-            <button className="inline-flex items-center justify-center rounded-md border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10 transition">
+            <Link to="/cart" className="inline-flex items-center justify-center rounded-md border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10 transition">
               <ShoppingCart className="h-5 w-5" />
-            </button>
-            <button className="inline-flex items-center justify-center rounded-md border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10 transition">
+            </Link>
+            <Link to="/login" className="inline-flex items-center justify-center rounded-md border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10 transition">
               <User className="h-5 w-5" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

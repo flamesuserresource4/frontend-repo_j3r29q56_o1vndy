@@ -1,6 +1,7 @@
 import React from 'react';
 import { Star, Search } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const products = [
   {
@@ -80,7 +81,7 @@ export default function ProductPreview() {
               transition={{ duration: 0.5, delay: idx * 0.05 }}
               className="group relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br p-0.5"
             >
-              <div className={`rounded-[11px] bg-neutral-950 p-3`}> 
+              <Link to={`/product/${p.id}`} className="block rounded-[11px] bg-neutral-950 p-3">
                 <div className={`relative h-48 w-full overflow-hidden rounded-lg bg-gradient-to-br ${p.color}`}>
                   <span className="pointer-events-none absolute right-2 top-2 rounded-full bg-black/40 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white/90">
                     {p.tag}
@@ -102,11 +103,9 @@ export default function ProductPreview() {
                       </span>
                     ))}
                   </div>
-                  <button className="mt-4 w-full rounded-md bg-blue-600 py-2 text-sm font-semibold hover:bg-blue-500 transition">
-                    Add to Cart
-                  </button>
                 </div>
-              </div>
+              </Link>
+              <Link to="/cart" className="mx-3 mb-3 block rounded-md bg-blue-600 py-2 text-center text-sm font-semibold hover:bg-blue-500 transition">Add to Cart</Link>
 
               {/* Hover shine */}
               <div className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100" style={{ background: 'conic-gradient(from 180deg at 50% 50%, rgba(59,130,246,0.25), rgba(147,51,234,0.15), rgba(59,130,246,0.25))' }} />

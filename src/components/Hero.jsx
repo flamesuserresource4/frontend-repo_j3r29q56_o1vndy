@@ -1,6 +1,7 @@
 import React from 'react';
 import Spline from '@splinetool/react-spline';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
@@ -30,12 +31,12 @@ export default function Hero() {
           Discover premium fashion, curated for comfort and performance. Secure checkout, fast delivery, and modern design in one place.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <a href="#shop" className="inline-flex items-center gap-2 rounded-md bg-blue-600 px-5 py-3 text-sm font-semibold shadow-lg shadow-blue-600/30 hover:bg-blue-500 transition">
+          <Link to="/shop" className="inline-flex items-center gap-2 rounded-md bg-blue-600 px-5 py-3 text-sm font-semibold shadow-lg shadow-blue-600/30 hover:bg-blue-500 transition">
             Shop Now <ArrowRight className="h-4 w-4" />
-          </a>
-          <a href="#about" className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold hover:bg-white/10 transition">
+          </Link>
+          <Link to="/about" className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold hover:bg-white/10 transition">
             Explore Collections
-          </a>
+          </Link>
         </div>
       </div>
     </section>
